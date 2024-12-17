@@ -44,7 +44,7 @@ describe('DeploymentApi', () => {
     );
 
     createdDeploymentId = runningDeployment.id;
-  }, 200000);
+  }, 300000);
 
   it('should stop the deployment', async () => {
     const deploymentId = await checkCreatedDeployment(
@@ -72,7 +72,7 @@ describe('DeploymentApi', () => {
         status: 'STOPPED'
       })
     );
-  }, 200000);
+  }, 300000);
 
   it('should delete the deployment', async () => {
     const deploymentId = await checkCreatedDeployment(
@@ -98,7 +98,7 @@ describe('DeploymentApi', () => {
         { 'AI-Resource-Group': resourceGroup }
       ).execute()
     ).rejects.toThrow();
-  }, 150000);
+  }, 250000);
 
   it('should validate consistency of deployments after test flow', async () => {
     const queryResponse = await getDeployments(resourceGroup);

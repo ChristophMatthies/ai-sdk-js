@@ -32,10 +32,10 @@ export async function waitForDeploymentToReachStatus(
       throw new Error(`Deployment has not yet reached ${targetStatus} status.`);
     },
     {
-      retries: 15,
-      factor: 1.5,
-      minTimeout: 1000,
-      maxTimeout: 15000,
+      retries: 20,
+      factor: 2,
+      minTimeout: 2000,
+      maxTimeout: 30000,
       randomize: false
     }
   );
